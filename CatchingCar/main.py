@@ -12,7 +12,7 @@ def next_bigger(n):
             n_list_end = n_list[i:]
             for x in range(n_list[i-1]+1, 10):
                 if x in n_list_end:
-                    rotate_index = n_lKOist_end.index(x)
+                    rotate_index = n_list_end.index(x)
                     break
             n_list_beg[i-1], n_list_end[rotate_index] = n_list_end[rotate_index], n_list_beg[i-1]
             n_list_end.sort()

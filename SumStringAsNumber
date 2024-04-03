@@ -1,0 +1,19 @@
+def sum_strings(x, y):    
+    maxLen = max(len(x), len(y))
+    x = x.zfill(maxLen)[::-1]
+    y = y.zfill(maxLen)[::-1]
+
+    r = []
+    carryover = 0
+
+    for i  in range(maxLen):
+        carryover, res = str(int(x[i]) + int(y[i]) + int(carryover)).zfill(2)
+        r.append(res)
+        if i == maxLen-1:
+            r.append(carryover)
+    r = "".join(r)[::-1].lstrip("0")
+    if not r: r = "0"
+    return r 
+
+print(sum_strings("1456", "61"))
+print(sum_strings("5", "0") == "5")
